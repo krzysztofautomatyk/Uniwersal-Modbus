@@ -68,6 +68,8 @@
             this.toolStripComboBox4 = new System.Windows.Forms.ToolStripComboBox();
             this.tSB_zawszeNaWierzchu = new System.Windows.Forms.ToolStripButton();
             this.zawszeNaWierzchuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -82,7 +84,7 @@
             this.pomocToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(656, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(749, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -106,8 +108,8 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.zawszeNaWierzchuToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "&Edit";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.editToolStripMenuItem.Text = "&Edycja";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // pomocToolStripMenuItem
@@ -120,7 +122,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 353);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(656, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(749, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -142,7 +144,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(656, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(749, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -239,10 +241,11 @@
             this.tSDDB_MR_Parity,
             this.toolStripComboBox1,
             this.tSDDB_MR_DataBit,
-            this.toolStripComboBox2});
+            this.toolStripComboBox2,
+            this.toolStripButton1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 49);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(656, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(749, 25);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -256,10 +259,11 @@
             this.toolStripTextBox4,
             this.toolStripLabel3,
             this.toolStripTextBox3,
-            this.toolStripComboBox4});
+            this.toolStripComboBox4,
+            this.toolStripButton2});
             this.toolStrip3.Location = new System.Drawing.Point(0, 74);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(656, 25);
+            this.toolStrip3.Size = new System.Drawing.Size(749, 25);
             this.toolStrip3.TabIndex = 4;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -433,11 +437,29 @@
             this.zawszeNaWierzchuToolStripMenuItem.Text = "&Zawsze na wierzchu";
             this.zawszeNaWierzchuToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(42, 22);
+            this.toolStripButton1.Text = "Dodaj";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(42, 22);
+            this.toolStripButton2.Text = "Dodaj";
+            // 
             // UniwersalModbus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 375);
+            this.ClientSize = new System.Drawing.Size(749, 375);
             this.Controls.Add(this.toolStrip3);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
@@ -504,6 +526,8 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox4;
         private System.Windows.Forms.ToolStripButton tSB_zawszeNaWierzchu;
         private System.Windows.Forms.ToolStripMenuItem zawszeNaWierzchuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }
 
