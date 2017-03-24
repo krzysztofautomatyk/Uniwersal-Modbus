@@ -15,17 +15,16 @@ namespace UniwersalModbus
         public UniwersalModbus()
         {
             InitializeComponent();
+            EventHandler eh = new EventHandler(this.Zamknij);
         }
-
-        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
+        public void Zamknij(Object sender, EventArgs e)
         {
             this.Close();
         }
+       
 
-        private void UniwersalModbus_Load(object sender, EventArgs e)
-        {
-             
-        }
+      
+
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -43,7 +42,13 @@ namespace UniwersalModbus
             }
         }
 
+        
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void plikToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

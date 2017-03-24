@@ -33,6 +33,7 @@
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zawszeNaWierzchuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -46,29 +47,28 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tSB_zawszeNaWierzchu = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.tSDDB_MR_BaudRate = new System.Windows.Forms.ToolStripComboBox();
-            this.tSDDB_MR_DataBit = new System.Windows.Forms.ToolStripComboBox();
             this.tSDDB_MR_Parity = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.tSDDB_MR_DataBit = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripComboBox4 = new System.Windows.Forms.ToolStripComboBox();
-            this.tSB_zawszeNaWierzchu = new System.Windows.Forms.ToolStripButton();
-            this.zawszeNaWierzchuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -95,13 +95,15 @@
             this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
             this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikToolStripMenuItem.Text = "&Plik";
+            this.plikToolStripMenuItem.Click += new System.EventHandler(this.plikToolStripMenuItem_Click);
             // 
             // zamknijToolStripMenuItem
             // 
             this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.zamknijToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.zamknijToolStripMenuItem.Text = "&Zamknij";
-            this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
+            this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.Zamknij);
             // 
             // editToolStripMenuItem
             // 
@@ -111,6 +113,15 @@
             this.editToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.editToolStripMenuItem.Text = "&Edycja";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // zawszeNaWierzchuToolStripMenuItem
+            // 
+            this.zawszeNaWierzchuToolStripMenuItem.Checked = true;
+            this.zawszeNaWierzchuToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.zawszeNaWierzchuToolStripMenuItem.Name = "zawszeNaWierzchuToolStripMenuItem";
+            this.zawszeNaWierzchuToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.zawszeNaWierzchuToolStripMenuItem.Text = "&Zawsze na wierzchu";
+            this.zawszeNaWierzchuToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // pomocToolStripMenuItem
             // 
@@ -230,6 +241,24 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tSB_zawszeNaWierzchu
+            // 
+            this.tSB_zawszeNaWierzchu.Checked = true;
+            this.tSB_zawszeNaWierzchu.CheckOnClick = true;
+            this.tSB_zawszeNaWierzchu.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tSB_zawszeNaWierzchu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tSB_zawszeNaWierzchu.Image = ((System.Drawing.Image)(resources.GetObject("tSB_zawszeNaWierzchu.Image")));
+            this.tSB_zawszeNaWierzchu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSB_zawszeNaWierzchu.Name = "tSB_zawszeNaWierzchu";
+            this.tSB_zawszeNaWierzchu.Size = new System.Drawing.Size(115, 22);
+            this.tSB_zawszeNaWierzchu.Text = "Zawsze na wierzchu";
+            this.tSB_zawszeNaWierzchu.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // toolStrip2
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -249,6 +278,106 @@
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(75, 22);
+            this.toolStripLabel1.Text = "Modbus RTU";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(130, 25);
+            this.toolStripTextBox1.Text = "Sterownik PLC Fatek";
+            // 
+            // toolStripComboBox3
+            // 
+            this.toolStripComboBox3.AutoSize = false;
+            this.toolStripComboBox3.Items.AddRange(new object[] {
+            "1 bit",
+            "1,5 bit",
+            "2 bit"});
+            this.toolStripComboBox3.Name = "toolStripComboBox3";
+            this.toolStripComboBox3.Size = new System.Drawing.Size(75, 23);
+            this.toolStripComboBox3.Text = "COM122";
+            // 
+            // tSDDB_MR_BaudRate
+            // 
+            this.tSDDB_MR_BaudRate.AutoSize = false;
+            this.tSDDB_MR_BaudRate.Items.AddRange(new object[] {
+            "115200",
+            "57600",
+            "38400",
+            "19200",
+            "9600",
+            "4800",
+            "2400",
+            "1200",
+            "600",
+            "300"});
+            this.tSDDB_MR_BaudRate.Name = "tSDDB_MR_BaudRate";
+            this.tSDDB_MR_BaudRate.Size = new System.Drawing.Size(60, 23);
+            this.tSDDB_MR_BaudRate.Text = "115200";
+            // 
+            // tSDDB_MR_Parity
+            // 
+            this.tSDDB_MR_Parity.AutoSize = false;
+            this.tSDDB_MR_Parity.Items.AddRange(new object[] {
+            "None",
+            "Odd parity",
+            "Even parity"});
+            this.tSDDB_MR_Parity.Name = "tSDDB_MR_Parity";
+            this.tSDDB_MR_Parity.Size = new System.Drawing.Size(80, 23);
+            this.tSDDB_MR_Parity.Text = "None";
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.AutoSize = false;
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "8 bits",
+            "7 bits",
+            "6 bits",
+            "5 bits"});
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(50, 23);
+            this.toolStripComboBox1.Text = "8 bits";
+            // 
+            // tSDDB_MR_DataBit
+            // 
+            this.tSDDB_MR_DataBit.AutoSize = false;
+            this.tSDDB_MR_DataBit.Items.AddRange(new object[] {
+            "1 bit",
+            "1,5 bit",
+            "2 bit"});
+            this.tSDDB_MR_DataBit.Name = "tSDDB_MR_DataBit";
+            this.tSDDB_MR_DataBit.Size = new System.Drawing.Size(45, 23);
+            this.tSDDB_MR_DataBit.Text = "1 bit";
+            // 
+            // toolStripComboBox2
+            // 
+            this.toolStripComboBox2.AutoSize = false;
+            this.toolStripComboBox2.Items.AddRange(new object[] {
+            "1 bit",
+            "1,5 bit",
+            "2 bit"});
+            this.toolStripComboBox2.Name = "toolStripComboBox2";
+            this.toolStripComboBox2.Size = new System.Drawing.Size(75, 23);
+            this.toolStripComboBox2.Text = "10 ms";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(42, 22);
+            this.toolStripButton1.Text = "Dodaj";
+            // 
             // toolStrip3
             // 
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -267,124 +396,16 @@
             this.toolStrip3.TabIndex = 4;
             this.toolStrip3.Text = "toolStrip3";
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(75, 22);
-            this.toolStripLabel1.Text = "Modbus RTU";
-            // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(75, 22);
             this.toolStripLabel2.Text = "Modbus TCP";
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tSDDB_MR_BaudRate
-            // 
-            this.tSDDB_MR_BaudRate.AutoSize = false;
-            this.tSDDB_MR_BaudRate.Items.AddRange(new object[] {
-            "115200",
-            "57600",
-            "38400",
-            "19200",
-            "9600",
-            "4800",
-            "2400",
-            "1200",
-            "600",
-            "300"});
-            this.tSDDB_MR_BaudRate.Name = "tSDDB_MR_BaudRate";
-            this.tSDDB_MR_BaudRate.Size = new System.Drawing.Size(60, 25);
-            this.tSDDB_MR_BaudRate.Text = "115200";
-            // 
-            // tSDDB_MR_DataBit
-            // 
-            this.tSDDB_MR_DataBit.AutoSize = false;
-            this.tSDDB_MR_DataBit.Items.AddRange(new object[] {
-            "1 bit",
-            "1,5 bit",
-            "2 bit"});
-            this.tSDDB_MR_DataBit.Name = "tSDDB_MR_DataBit";
-            this.tSDDB_MR_DataBit.Size = new System.Drawing.Size(45, 25);
-            this.tSDDB_MR_DataBit.Text = "1 bit";
-            // 
-            // tSDDB_MR_Parity
-            // 
-            this.tSDDB_MR_Parity.AutoSize = false;
-            this.tSDDB_MR_Parity.Items.AddRange(new object[] {
-            "None",
-            "Odd parity",
-            "Even parity"});
-            this.tSDDB_MR_Parity.Name = "tSDDB_MR_Parity";
-            this.tSDDB_MR_Parity.Size = new System.Drawing.Size(80, 25);
-            this.tSDDB_MR_Parity.Text = "None";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.AutoSize = false;
-            this.toolStripComboBox1.Items.AddRange(new object[] {
-            "8 bits",
-            "7 bits",
-            "6 bits",
-            "5 bits"});
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(50, 23);
-            this.toolStripComboBox1.Text = "8 bits";
-            // 
-            // toolStripComboBox2
-            // 
-            this.toolStripComboBox2.AutoSize = false;
-            this.toolStripComboBox2.Items.AddRange(new object[] {
-            "1 bit",
-            "1,5 bit",
-            "2 bit"});
-            this.toolStripComboBox2.Name = "toolStripComboBox2";
-            this.toolStripComboBox2.Size = new System.Drawing.Size(75, 23);
-            this.toolStripComboBox2.Text = "10 ms";
-            // 
-            // toolStripComboBox3
-            // 
-            this.toolStripComboBox3.AutoSize = false;
-            this.toolStripComboBox3.Items.AddRange(new object[] {
-            "1 bit",
-            "1,5 bit",
-            "2 bit"});
-            this.toolStripComboBox3.Name = "toolStripComboBox3";
-            this.toolStripComboBox3.Size = new System.Drawing.Size(75, 23);
-            this.toolStripComboBox3.Text = "COM122";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(130, 25);
-            this.toolStripTextBox1.Text = "Sterownik PLC Fatek";
-            // 
-            // toolStripTextBox3
-            // 
-            this.toolStripTextBox3.Name = "toolStripTextBox3";
-            this.toolStripTextBox3.Size = new System.Drawing.Size(40, 25);
-            this.toolStripTextBox3.Text = "502";
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(32, 22);
-            this.toolStripLabel3.Text = "Port:";
             // 
             // toolStripTextBox2
             // 
@@ -404,6 +425,18 @@
             this.toolStripTextBox4.Size = new System.Drawing.Size(90, 25);
             this.toolStripTextBox4.Text = "192.168.102.152";
             // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(32, 22);
+            this.toolStripLabel3.Text = "Port:";
+            // 
+            // toolStripTextBox3
+            // 
+            this.toolStripTextBox3.Name = "toolStripTextBox3";
+            this.toolStripTextBox3.Size = new System.Drawing.Size(40, 25);
+            this.toolStripTextBox3.Text = "502";
+            // 
             // toolStripComboBox4
             // 
             this.toolStripComboBox4.AutoSize = false;
@@ -414,37 +447,6 @@
             this.toolStripComboBox4.Name = "toolStripComboBox4";
             this.toolStripComboBox4.Size = new System.Drawing.Size(75, 23);
             this.toolStripComboBox4.Text = "10 ms";
-            // 
-            // tSB_zawszeNaWierzchu
-            // 
-            this.tSB_zawszeNaWierzchu.Checked = true;
-            this.tSB_zawszeNaWierzchu.CheckOnClick = true;
-            this.tSB_zawszeNaWierzchu.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.tSB_zawszeNaWierzchu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tSB_zawszeNaWierzchu.Image = ((System.Drawing.Image)(resources.GetObject("tSB_zawszeNaWierzchu.Image")));
-            this.tSB_zawszeNaWierzchu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSB_zawszeNaWierzchu.Name = "tSB_zawszeNaWierzchu";
-            this.tSB_zawszeNaWierzchu.Size = new System.Drawing.Size(115, 22);
-            this.tSB_zawszeNaWierzchu.Text = "Zawsze na wierzchu";
-            this.tSB_zawszeNaWierzchu.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // zawszeNaWierzchuToolStripMenuItem
-            // 
-            this.zawszeNaWierzchuToolStripMenuItem.Checked = true;
-            this.zawszeNaWierzchuToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.zawszeNaWierzchuToolStripMenuItem.Name = "zawszeNaWierzchuToolStripMenuItem";
-            this.zawszeNaWierzchuToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.zawszeNaWierzchuToolStripMenuItem.Text = "&Zawsze na wierzchu";
-            this.zawszeNaWierzchuToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(42, 22);
-            this.toolStripButton1.Text = "Dodaj";
             // 
             // toolStripButton2
             // 
@@ -471,7 +473,6 @@
             this.Name = "UniwersalModbus";
             this.Text = "Uniwersal Modbus RTU/TCP";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.UniwersalModbus_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
