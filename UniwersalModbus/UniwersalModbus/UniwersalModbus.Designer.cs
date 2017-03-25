@@ -53,7 +53,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripComboBoxPortCOM = new System.Windows.Forms.ToolStripComboBox();
             this.tSDDB_MR_BaudRate = new System.Windows.Forms.ToolStripComboBox();
             this.tSDDB_MR_Parity = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
@@ -265,7 +265,7 @@
             this.toolStripLabel1,
             this.toolStripSeparator2,
             this.toolStripTextBox1,
-            this.toolStripComboBox3,
+            this.toolStripComboBoxPortCOM,
             this.tSDDB_MR_BaudRate,
             this.tSDDB_MR_Parity,
             this.toolStripComboBox1,
@@ -295,16 +295,18 @@
             this.toolStripTextBox1.Size = new System.Drawing.Size(130, 25);
             this.toolStripTextBox1.Text = "Sterownik PLC Fatek";
             // 
-            // toolStripComboBox3
+            // toolStripComboBoxPortCOM
             // 
-            this.toolStripComboBox3.AutoSize = false;
-            this.toolStripComboBox3.Items.AddRange(new object[] {
-            "1 bit",
-            "1,5 bit",
-            "2 bit"});
-            this.toolStripComboBox3.Name = "toolStripComboBox3";
-            this.toolStripComboBox3.Size = new System.Drawing.Size(75, 23);
-            this.toolStripComboBox3.Text = "COM122";
+            this.toolStripComboBoxPortCOM.AutoSize = false;
+            this.toolStripComboBoxPortCOM.CausesValidation = false;
+            this.toolStripComboBoxPortCOM.DropDownWidth = 300;
+            this.toolStripComboBoxPortCOM.Name = "toolStripComboBoxPortCOM";
+            this.toolStripComboBoxPortCOM.Size = new System.Drawing.Size(78, 23);
+            this.toolStripComboBoxPortCOM.Sorted = true;
+            this.toolStripComboBoxPortCOM.Text = "Port COM";
+            this.toolStripComboBoxPortCOM.DropDownClosed += new System.EventHandler(this.toolStripComboBoxPortCOM_DropDownClosed);
+            this.toolStripComboBoxPortCOM.Leave += new System.EventHandler(this.toolStripComboBoxPortCOM_Leave);
+            this.toolStripComboBoxPortCOM.Click += new System.EventHandler(this.ZnajdzPortComWKomputerze);
             // 
             // tSDDB_MR_BaudRate
             // 
@@ -473,6 +475,7 @@
             this.Name = "UniwersalModbus";
             this.Text = "Uniwersal Modbus RTU/TCP";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.UniwersalModbus_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -517,7 +520,7 @@
         private System.Windows.Forms.ToolStripComboBox tSDDB_MR_Parity;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBoxPortCOM;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
